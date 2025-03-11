@@ -30,7 +30,7 @@ jobs:
         git clone --recursive https://github.com/aseprite/aseprite.git aseprite
     - name: Download compiled skia
       run: |
-        iwr -Uri "${{ steps.links.outputs.action_skia }}" -outf skia.zip
+        iwr -Uri ${{ steps.links.outputs.action_skia }} -outf skia.zip
         7z x skia.zip -y -oskia | findstr ing
     - name: Find path
       id: path
