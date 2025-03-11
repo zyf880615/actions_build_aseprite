@@ -109,7 +109,7 @@ jobs:
            cp -r aseprite/build/bin/* deb-frame/usr/share/aseprite/
            dpkg -b deb-frame Aseprite-ubuntu_amd64.deb
       - name: Upload linux artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: Aseprite-ubuntu_amd64.deb
 
@@ -160,7 +160,7 @@ jobs:
         cd ../../..
         mv aseprite/build/bin/Aseprite-mac-x64.zip .
     - name: Upload macos artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
           path: Aseprite-mac-x64.zip
 
@@ -170,7 +170,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Download artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
     - name: Get tag
       run: echo "atb=$(cat release-versions/version.json)" >> "$GITHUB_OUTPUT"
       id: links
